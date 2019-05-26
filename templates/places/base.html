@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'places/index2.css' %}">
+		<!-- <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Source+Sans+Pro" rel="stylesheet"> -->
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		
+	    <meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+
+</head>
+<body>
+		<nav class="navbar navbar-expand-sm flexer navbar-dark fixed-top nav-tech">
+			<a class="navbar-brand text-white" style="font-size:20px" href="/">
+				<kbd>TakeMeds</kbd>
+			</a>
+			<span class="col-2"></span>
+			<form class="form-inline col" action="/search/" method="post">
+            {% csrf_token %}
+				<input class="form-control mr-sm-6 flexer"  name="search_input" style="width:70%;border-radius: 20px;border:none;margin-right: 10px;" type="text" placeholder="Search For More Medicines">
+				<button class="btn bg-darkg flexer" style="border-radius:40%;" type="submit"><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/search-24.png" /></button>
+			</form>
+			<ul class="nav navbar-nav">
+				<li><a class=" float-right nav-item p nav-link text-dark" style="font-size:15px;" href="#">
+					<kbd>About us</kbd>
+				</a>
+				</li>
+				<li>
+				<a class=" float-right nav-item p nav-link text-dark" style="font-size:15px;" href="#">
+					<kbd> How to? </kbd>
+				</a>
+				</li>
+				<li><a class=" float-right nav-item p nav-link text-dark" style="font-size:15px;" href="/{% if user.is_authenticated %}logout{% else %}login{% endif %}">
+					<kbd>{% if user.is_authenticated %}Logout{% else %}Login{% endif %}</kbd>
+				</a>
+				</li>
+			</ul>
+		</nav>
+	<div class="float-left left-c bg-green flexer-1 rounded right">
+		
+	</div>
+	<div class="float-left left-c-1 bg-white flexer-1 rounded right">
+	
+	</div>
+	<div class="float-right right-c bg-white flexer-1 rounded left">
+	</div>
+	<div class="float-right rounded bg-yellow flexer-1 right-c-1 left" data-toggle="affix" data-offset-top="600px">
+	</div>
+	<div class="rr centered centered-pos">
+		{% block content%}
+		{% endblock content%}
+	</div>
+</body>
+</html>

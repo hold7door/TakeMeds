@@ -1,0 +1,25 @@
+
+{% load static %}
+
+<html>
+	<head>
+		<title>Login or Sign Up</title>
+		<link rel="stylesheet" href="{% static 'accounts/form.css' %}"/>
+	</head>
+	<body>
+		<div class="container" style="background-image:url({% static 'accounts/login_form_bak.jpg' %});">
+			<div class="form-container">
+				<div id="heading1"><span class="heading">Create new account</span></div>
+				<div class="form">
+					<form id="form-box" method="post" action="/login/createnew">
+					{% csrf_token %}
+					<input id="user" type="text" maxlength="20" name="username" placeholder="Username"><br>
+					<input id="email" type="email" name="email" placeholder="Email"><br>
+					<input id="pass" type="password" name="passwd" placeholder="Password"><br>
+					<input id="sub" type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

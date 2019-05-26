@@ -1,0 +1,29 @@
+
+{% load static %}
+
+<html>
+	<head>
+		<title>Login or Sign Up</title>
+		<link rel="stylesheet" href="{% static 'accounts/form.css' %}"/>
+	</head>
+	<body>
+		<div class="container" style="background-image:url({% static 'accounts/login_form_bak.jpg' %});">
+			<div class="form-container">
+			<div class="consult-us"><span class="consult">Login in to consult a doctor</span></div>
+				<div id="heading1"><span class="heading">Log in</span></div>
+				<div class="form">
+					<form id="form-box" method="post" action="/login/submit">
+					{% csrf_token %}
+					<input id="user" type="text" maxlength="20" name="username" placeholder="Username"><br>
+					<input id="pass" type="password" name="passwd" placeholder="Password"><br>
+					<input id="sub" type="submit" value="Submit">
+					</form>
+					<div class="new-forgot">
+						<span><a href="/login/createnew">Create Account</a></span><br><hr>
+						<span><a href="">Forgot Password?</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

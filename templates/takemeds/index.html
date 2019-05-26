@@ -1,0 +1,39 @@
+
+{% load static %}
+<html>
+<head>
+	<title>
+		May the Force be with you.
+	</title>
+ 	 <link rel="stylesheet" href="{% static 'takemeds/index.css' %}"/>
+	 <!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+</head>
+<body>
+	<div class="container" style="background-image:url({% static 'takemeds/med_home.jpg' %})">
+			<form id="search-bar" class="searchcon" action="/search/" target="_self"  method="post">
+           	{% csrf_token %}			
+			<input type="text" class="inputcon" name= "search_input" placeholder="Search for medicine..." autocomplete="off" required/>
+			<button class="search" type="submit"><img src="{% static 'takemeds/search2.svg' %}" width="48%" /></button>
+			</form>
+    <div class="getloc">
+		    <button onclick="geoFindMe()" class="getloc-text"><span class="getloc-text1">Locate Me</span><img src="{% static 'takemeds/location-pointer.svg' %}" width="50px" height="25px"/></button>
+	</div>
+	<div class="login getloc">
+		<span class="link-form"><a href="/{% if user.is_authenticated %}logout{% else %}login{% endif %}" class="link-text">{% if user.is_authenticated %}Logout{% else %}Login{% endif %}</a></span>
+	</div>
+		
+	<button class="consult" onclick="location.href='{% if user.is_authenticated %}{% else %}/login{% endif %}';">
+		Consult a Doctor
+	</button>
+	<p class="about">
+		<a href="#" class="privacy">About &nbsp;&nbsp;</a>&verbar;<a href="#" class="privacy">&nbsp;&nbsp;Privacy Policy&nbsp;&nbsp;</a>&verbar;&nbsp;&nbsp;<a href="#" class="privacy">Business</a>
+	</p>
+	</div>
+	<div class="logocon">
+	</div>
+		<script type="text/javascript" src="{% static 'takemeds/main.js' %}">
+    </script>
+</body>
+</html>

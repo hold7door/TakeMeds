@@ -1,0 +1,55 @@
+{% extends "places/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    {% if stores_avail %}
+    {% for name,address,store_id,rating,distance in stores_avail %}
+		<div id="mydiv{{ forloop.counter }}" class="blocks flexer-1 bg-white rounded">
+			<div id="pic" class="rounded-circle flexer bg-dark position-r"><img src="{% static 'places/e.jpeg' %}" height="175px" width="175px" class="rounded-circle"/></div>
+			<h1 class="text position-r h">{{ name }}</h1>
+			<span class="not-spl position-r"><p>Distance from you: <kbd class="bg-success">{{ distance }}KM</kbd></p></span>
+			<span class="rounded"></span>
+			<kbd id="rat" class="bg-success position-r whoa">Rating: {{ rating }}</kbd>
+        {% if store_id in id_stores_with_brand %}
+        {% for storei,brand_name in stores_with_brand.items %}
+        {% if storei == store_id %}   
+        <div id="meddiv" class="position-r labeld hell visible">
+        {% for b in brand_name %}
+        {% if forloop.counter < 3 %}
+					<span id="div1" class="spl2" style="background: linear-gradient(50deg,rgb(87, 51, 234), rgb(72, 148, 255) 70%);">
+					{{ b }}
+					</span>
+        {% endif %}
+        {% endfor %}
+        </div>
+        <div id="meddiv2" class="position-r hello medd2">
+        {% for b in brand_name %}
+					<span id="div1" class="spl2" style="background: linear-gradient(50deg,rgb(87, 51, 234), rgb(72, 148, 255) 70%);">
+					{{ b }}
+					</span>
+        {% endfor %}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% if store_id not in id_stores_with_brand %}
+                 <div id="meddiv" class="position-r labeld hell visible">
+					<span id="div1" class="spl2" style="background: linear-gradient(50deg,rgb(87, 51, 234), rgb(72, 148, 255) 70%);">
+					Generic Form Available
+					</span>
+			     </div>
+        {% endif %}
+	   <button type="button" id="myb" class="rel btn position-r spl" onclick="clicke(this)">See More.</button>
+			<span id="add" class="position-r adda a">
+				{% for line in address %}
+                    {{ line }}<br/>
+                {% endfor %} 
+		    </span>			
+	   </div>
+    {% endfor %}
+    {% endif %}		
+	</div>
+	<script type="text/javascript" src="{% static 'places/index2.js' %}">
+    </script>
+{% endblock content %}
