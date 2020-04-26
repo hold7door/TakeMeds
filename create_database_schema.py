@@ -8,7 +8,6 @@ database = MySQLdb.connect(user = os.environ['DB_USER'], passwd = os.environ['DB
 
 db = database.cursor()
 
-
 def create_all_stores():
     try:
         db.execute("""CREATE TABLE all_stores (store_id int, name varchar(50), address varchar(200), rating int, lat float(6, 3), lng float(6, 3), constraint pk PRIMARY KEY(store_id))""")
