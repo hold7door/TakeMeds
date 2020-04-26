@@ -1,0 +1,82 @@
+*{font-family: 'Oswald', sans-serif;color:grey}
+body{margin:0;}
+
+.container{
+	position:relative;
+	height:100%;
+	width:100%;
+}
+
+.form-container{
+	position:absolute;
+	padding:10px;
+	top:25%;
+	left:33%;
+	border-radius:40px;
+	background-color:#c6d7f2;
+}
+
+.form{
+	padding:30px;
+}
+
+#pass{
+	height:40px;
+	width:200px;
+	border-radius:6px;
+	margin-top:10px;
+	padding-left:3px;
+	border:none;
+}
+
+#user{
+	height:40px;
+	width:200px;
+	border-radius:6px;
+	padding-left:3px;
+	border:none;
+}
+#email{
+	height:40px;
+	width:200px;
+	border-radius:6px;
+	margin-top:10px;
+	padding-left:3px;
+	border:none;
+}
+#sub{
+	height:40px;
+	width:80px;
+	margin-top:20px;
+	margin-left:50px;
+	background-color:#003366;
+	border-radius:8px;
+	color:white;
+	border:none
+}
+
+.heading{
+	position:relative;
+	margin-left:10px;
+	font-size:20;
+	text-align:center;
+	padding:20px;
+}
+.consult-us{
+	margin-top:20px;
+}
+.consult{
+	font-size:35px;
+	padding:20px;
+}
+
+#heading1{
+	margin-top:20px;
+}
+#form-box{
+	margin:0;
+}.new-forgot{
+	position:absolute;
+	top:150px;
+	right:50px;
+}
