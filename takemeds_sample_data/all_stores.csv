@@ -1,0 +1,9 @@
+store_id,name,address,rating,lat,lng
+1,ABC Pharma,"line1, line2, India",4.5,26.86,82.02
+2,Sun Pharma,"line1, line2, India",1.2,26.86,82.02
+3,XYZ Pharma,"line1, line2, India",3.4,26.86,82.02
+4,Micro Pharma,"line1, line2, India",5,26.86,82.02
+5,Safe Pharma,"line1, line2, India",3.9,26.86,82.02
+6,Moon Pharma,"line1, line2, India",4.1,26.86,82.02
+7,Well Pharma,"line1, line2, India",4.8,26.86,82.02
+8,Health Pharma,"line1, line2, India",4.1,26.86,82.02

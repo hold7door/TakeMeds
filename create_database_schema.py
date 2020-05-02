@@ -10,7 +10,7 @@ db = database.cursor()
 
 def create_all_stores():
     try:
-        db.execute("""CREATE TABLE all_stores (store_id int, name varchar(50), address varchar(200), rating int, lat float(6, 3), lng float(6, 3), constraint pk PRIMARY KEY(store_id))""")
+        db.execute("""CREATE TABLE all_stores (store_id int, name varchar(50), address varchar(200), rating int, lat float(8, 5), lng float(8, 5), constraint pk PRIMARY KEY(store_id))""")
     except Exception as e:
         print(e, 1)
 def create_generic_medicine():
@@ -40,7 +40,7 @@ def create_tables():
     store_to_generic = "store_to_generic"
     brand_store = "brand_store"
     all_stores = "all_stores"
-    # Drop Tables if they already exist (Not working. Manually delete existing tables)
+    # Drop Tables if they already exist (Not working!! Manually delete existing tables)
     all_tables = [store_to_generic, brand_store, brand_medicine, generic_medicine, all_stores]
     for table in all_tables:
         db.execute(""" SHOW TABLES LIKE %s""", (table,))
